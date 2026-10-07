@@ -8,7 +8,7 @@ export default function App() {
     <>
       <header className="header">
         <Link to="/" className="logo">🍚 밀양 맛집</Link>
-        <Link to="/restaurants/new" className="btn">식당 등록</Link>
+        <Link to="/restaurants/new" className="btn">+ 식당 등록</Link>
       </header>
       <main className="container">
         <Routes>
@@ -18,6 +18,7 @@ export default function App() {
           <Route path="*" element={<p>페이지를 찾을 수 없습니다.</p>} />
         </Routes>
       </main>
+      <footer className="footer">밀양 맛집 · React + Spring Boot + MySQL</footer>
     </>
   )
 }

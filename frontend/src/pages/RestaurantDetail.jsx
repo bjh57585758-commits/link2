@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { createReview, deleteReview, getRestaurant } from '../api.js'
 import Stars from '../components/Stars.jsx'
+import { emojiOf } from '../components/categoryEmoji.js'
 
 export default function RestaurantDetail() {
   const { id } = useParams()
@@ -44,9 +45,9 @@ export default function RestaurantDetail() {
 
   return (
     <>
-      <Link to="/" className="muted">← 목록으로</Link>
+      <Link to="/" className="back">← 목록으로</Link>
       <section className="detail">
-        <h2>{data.name} <span className="tag">{data.category}</span></h2>
+        <h2>{emojiOf(data.category)} {data.name} <span className="tag">{data.category}</span></h2>
         <p>📍 {data.address}</p>
         {data.phone && <p>📞 {data.phone}</p>}
         {data.description && <p className="desc">{data.description}</p>}
@@ -57,7 +58,7 @@ export default function RestaurantDetail() {
       </section>
 
       <section>
-        <h3>리뷰 작성</h3>
+        <h3 className="section-title">리뷰 작성</h3>
         <form className="form" onSubmit={submit}>
           <div className="row">
             <input required maxLength={50} placeholder="닉네임" value={form.author}
@@ -76,7 +77,7 @@ export default function RestaurantDetail() {
       </section>
 
       <section>
-        <h3>리뷰 {data.reviews.length}개</h3>
+        <h3 className="section-title">리뷰 {data.reviews.length}개</h3>
         {data.reviews.length === 0 && <p className="muted">아직 리뷰가 없습니다.</p>}
         <ul className="reviews">
           {data.reviews.map((r) => (
