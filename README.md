@@ -16,11 +16,7 @@ cd frontend && cp .env.example .env && npm install && npm run dev   # http://loc
 **Frontend**: `VITE_API_URL` (백엔드 주소)
 
 ## 배포 (무료)
-> ⚠️ Render는 관리형 **MySQL을 제공하지 않습니다**(PostgreSQL만). 무료 MySQL은 Aiven 또는 TiDB Cloud Serverless 사용을 권장합니다.
+**TiDB Cloud(MySQL 호환 DB) + Render(백엔드) + Vercel(프론트엔드)** — 단계별 설정은 [docs/DEPLOY.md](docs/DEPLOY.md) 참고.
 
-1. **DB**: Aiven/TiDB에서 MySQL 생성 → 접속 정보 확인 (SSL 필요 시 `DB_URL`에 `useSSL=true` 추가)
-2. **Backend (Render Web Service)**: 저장소 연결 → Runtime `Docker`, Root Directory `backend` → 환경변수 `DB_URL`, `DB_USER`, `DB_PASSWORD`, `CORS_ORIGINS` 입력. Health Check Path: `/actuator/health`
-3. **Frontend (Vercel)**: 저장소 연결 → Root Directory `frontend` → 환경변수 `VITE_API_URL=https://<render-주소>`
-4. Vercel 배포 주소를 Render의 `CORS_ORIGINS`에 넣고 재배포
-
-무료 Render는 15분 무요청 시 잠들어 첫 접속이 30초~1분 걸립니다.
+> Render는 관리형 MySQL을 제공하지 않아(PostgreSQL만) DB는 TiDB Cloud Starter를 사용합니다.
+> 무료 Render는 15분 무요청 시 잠들어 첫 접속이 30초~1분 걸립니다.
