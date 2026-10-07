@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>벽돌식 블로그 스킨 미리보기</title>
+<link rel="stylesheet" href="skin.css"></head>
+<body>
+<!-- skin.css 의 선택자(.blog2_list > .blog2_post ...)를 쓰는 예시 마크업.
+     실제 네이버 블로그에서는 개발자도구(F12)로 글 목록 요소의 class 를 확인해 skin.css 선택자를 맞추세요. -->
+<ul class="blog2_list" id="list"></ul>
+<script>
+const h=[200,280,240,320,220,300,260,210,340];
+document.getElementById('list').innerHTML=h.map((x,i)=>`
+<li class="blog2_post">
+  <a href="#"><img alt="" src="https://picsum.photos/seed/b${i}/400/${x}">
+  <span class="title">맛집 리뷰 ${i+1} · 꼭 가봐야 할 곳</span></a>
+  <p class="desc">사진과 함께 보는 솔직 후기. 메뉴, 가격, 위치 정보를 한눈에 정리했어요.</p>
+  <span class="date">2026.10.0${(i%9)+1}</span>
+</li>`).join('');
+</script>
+</body></html>
