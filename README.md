@@ -16,7 +16,7 @@ cd frontend && cp .env.example .env && npm install && npm run dev   # http://loc
 **Frontend**: `VITE_API_URL` (백엔드 주소)
 
 ## 배포 (무료)
-**TiDB Cloud(MySQL 호환 DB) + Render(백엔드) + Vercel(프론트엔드)** — 단계별 설정은 [docs/DEPLOY.md](docs/DEPLOY.md) 참고.
+**Aiven MySQL(DB) + Render(백엔드) + Vercel(프론트엔드)** — 단계별 설정은 [docs/DEPLOY.md](docs/DEPLOY.md) 참고.
 
-> Render는 관리형 MySQL을 제공하지 않아(PostgreSQL만) DB는 TiDB Cloud Starter를 사용합니다.
+> Render는 관리형 MySQL을 제공하지 않아(PostgreSQL만) DB는 Aiven 무료 MySQL을 사용합니다.
 > 무료 Render는 15분 무요청 시 잠들어 첫 접속이 30초~1분 걸립니다.
