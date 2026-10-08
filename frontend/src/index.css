@@ -82,3 +82,10 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent-soft
   .hero h1 { font-size: 1.35rem; }
   .search { flex-direction: column; }
 }
+
+.nav { display: flex; align-items: center; gap: 12px; }
+.nav-link { font-size: .92rem; font-weight: 600; color: var(--accent-dark); }
+.faq-row { grid-template-columns: 1fr 1fr; }
+.faq-answer { margin-top: 8px; }
+.faq-admin { margin-left: 0; color: var(--muted); }
+@media (max-width: 480px) { .faq-row { grid-template-columns: 1fr; } }

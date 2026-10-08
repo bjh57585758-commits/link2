@@ -25,3 +25,18 @@ export const createReview = (id, data) =>
 
 export const deleteReview = (reviewId, password) =>
   request(`/reviews/${reviewId}`, { method: 'DELETE', headers: { 'X-Review-Password': password } })
+
+export const listFaqs = () => request('/faqs')
+
+export const createFaq = (data) =>
+  request('/faqs', { method: 'POST', body: JSON.stringify(data) })
+
+export const answerFaq = (id, answer, adminPassword) =>
+  request(`/faqs/${id}/answer`, {
+    method: 'PUT',
+    body: JSON.stringify({ answer }),
+    headers: { 'X-Admin-Password': adminPassword },
+  })
+
+export const deleteFaq = (id, password) =>
+  request(`/faqs/${id}`, { method: 'DELETE', headers: { 'X-Review-Password': password } })

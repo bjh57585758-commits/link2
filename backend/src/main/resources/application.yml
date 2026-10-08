@@ -19,6 +19,8 @@ spring:
 app:
   cors:
     allowed-origins: ${CORS_ORIGINS:http://localhost:5173}
+  admin:
+    password: ${ADMIN_PASSWORD:}
 
 management:
   endpoints:
